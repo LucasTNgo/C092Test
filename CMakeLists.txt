@@ -28,6 +28,22 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 project(${CMAKE_PROJECT_NAME})
 message("Build type: " ${CMAKE_BUILD_TYPE})
 
+
+# ── FetchContent ────────────────────────────────────────────────────────────
+include(FetchContent)
+
+FetchContent_Declare(
+    CANopenNode
+    GIT_REPOSITORY https://github.com/CANopenNode/CANopenNode.git
+    GIT_TAG        master          # pin to a release tag in production, e.g. v4.0
+)
+
+# Prevent CANopenNode's own CMakeLists from adding targets you don't want
+set(FETCHCONTENT_QUIET OFF)
+FetchContent_MakeAvailable(CANopenNode)
+# ────────────────────────────────────────────────────────────────────────────
+
+
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
 
