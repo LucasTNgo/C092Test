@@ -1,0 +1,2 @@
+add_subdirectory(CANopenNode)
+add_subdirectory(CANopenSTM32)

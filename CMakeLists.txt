@@ -29,21 +29,6 @@ project(${CMAKE_PROJECT_NAME})
 message("Build type: " ${CMAKE_BUILD_TYPE})
 
 
-# ── FetchContent ────────────────────────────────────────────────────────────
-include(FetchContent)
-
-FetchContent_Declare(
-    CANopenNode
-    GIT_REPOSITORY https://github.com/CANopenNode/CANopenNode.git
-    GIT_TAG        master          # pin to a release tag in production, e.g. v4.0
-)
-
-# Prevent CANopenNode's own CMakeLists from adding targets you don't want
-set(FETCHCONTENT_QUIET OFF)
-FetchContent_MakeAvailable(CANopenNode)
-# ────────────────────────────────────────────────────────────────────────────
-
-
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
 
@@ -52,6 +37,9 @@ add_executable(${CMAKE_PROJECT_NAME})
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
+
+# Add Libs (User Added)
+add_subdirectory(Libs)
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
@@ -81,4 +69,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
 
     # Add user defined libraries
+    canopennode
+    canopennode_stm32
 )
