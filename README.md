@@ -21,21 +21,23 @@ and sensor integration ahead of a production outdoor deployment.
 - **Toolchain:** arm-none-eabi-gcc 14.3.1
 
 ## Project Structure
+```
 C092Test/
-├── Core/                   # CubeMX generated application code
+├── Core/
 │   ├── Inc/
 │   │   ├── main.h
-│   │   ├── OD.h            # CANopen Object Dictionary
+│   │   └── OD.h
 │   └── Src/
 │       ├── main.c
-│       ├── OD.c            # CANopen Object Dictionary
+│       └── OD.c
 ├── Libs/
-│   ├── CANopenNode/        # CANopen protocol stack (submodule)
-│   └── CANopenSTM32/       # STM32 CANopen driver (submodule)
+│   ├── CANopenNode/
+│   └── CANopenSTM32/
 ├── cmake/
-│   └── stm32cubemx/        # CubeMX generated CMake files
-├── Drivers/                # STM32 HAL + CMSIS
+│   └── stm32cubemx/
+├── Drivers/
 └── CMakeLists.txt
+```
 
 ## Getting Started
 
