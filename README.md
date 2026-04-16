@@ -26,13 +26,13 @@ C092Test/
 ├── Core/
 │   ├── Inc/
 │   │   ├── main.h
-│   │   └── OD.h
+│   │   └── OD.h        (Object Dictionary)
 │   └── Src/
 │       ├── main.c
-│       └── OD.c
+│       └── OD.c        (Object Dictionary)
 ├── Libs/
-│   ├── CANopenNode/
-│   └── CANopenSTM32/
+│   ├── CANopenNode/    (Subpackage)
+│   └── CANopenSTM32/   (Subpackage)
 ├── cmake/
 │   └── stm32cubemx/
 ├── Drivers/
